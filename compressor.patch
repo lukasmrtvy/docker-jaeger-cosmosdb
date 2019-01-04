@@ -1,0 +1,13 @@
+diff --git a/pkg/cassandra/config/config.go b/pkg/cassandra/config/config.go
+index f33a577..f772004 100644
+--- a/pkg/cassandra/config/config.go
++++ b/pkg/cassandra/config/config.go
+@@ -124,7 +124,7 @@ func (c *Configuration) NewCluster() *gocql.ClusterConfig {
+ 	if c.Port != 0 {
+ 		cluster.Port = c.Port
+ 	}
+-	cluster.Compressor = gocql.SnappyCompressor{}
++
+ 	if c.Consistency == "" {
+ 		cluster.Consistency = gocql.LocalOne
+ 	} else {
