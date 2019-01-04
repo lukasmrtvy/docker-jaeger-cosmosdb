@@ -13,7 +13,7 @@ RUN mkdir -p $GOPATH/src/github.com/jaegertracing && \
     
 COPY compressor.patch /jaeger/patches
     
-RUN cd https://github.com/jaegertracing/jaeger/jaeger && \
+RUN cd $GOPATH/src/github.com/jaegertracing/jaeger && \
     GOOS=linux make build-collector
 
 
