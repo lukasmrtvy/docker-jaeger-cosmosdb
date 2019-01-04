@@ -9,11 +9,12 @@ RUN mkdir -p $GOPATH/src/github.com/jaegertracing && \
     git clone https://github.com/jaegertracing/jaeger jaeger && \
     cd jaeger && \
     git submodule update --init --recursive && \
-    dep ensure 
-    
-COPY compressor.patch /jaeger/patches
-    
+    dep ensure
+
+COPY compressor.patch $GOPATH/src/github.com/jaegertracing/jaeger/
+
 RUN cd $GOPATH/src/github.com/jaegertracing/jaeger && \
+    git apply compressor.patch && \
     GOOS=linux make build-collector
 
 
