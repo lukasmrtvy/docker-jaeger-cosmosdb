@@ -1,6 +1,6 @@
 FROM ubuntu:bionic as builder
 
-RUN apt update && apt install -y  make bash git gcc golang go-dep
+RUN apt update && apt install -y  make bash git gcc golang golang-glide go-dep
 
 ENV GOPATH $HOME/go
 ENV VERSION v1.8.2
