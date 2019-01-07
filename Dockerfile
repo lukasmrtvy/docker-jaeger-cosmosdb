@@ -3,7 +3,7 @@ FROM ubuntu:bionic as builder
 RUN apt update && apt install -y  make bash git gcc golang go-dep
 
 ENV GOPATH $HOME/go
-ENV VERSION 1.8.2
+ENV VERSION v1.8.2
 
 RUN mkdir -p $GOPATH/src/github.com/jaegertracing && \
     cd $GOPATH/src/github.com/jaegertracing && \
