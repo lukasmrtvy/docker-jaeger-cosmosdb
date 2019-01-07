@@ -11,6 +11,7 @@ RUN mkdir -p $GOPATH/src/github.com/jaegertracing && \
     cd jaeger && \
     git checkout tags/$VERSION && \
     git submodule update --init --recursive && \
+    dep init && \
     dep ensure
 
 COPY compressor.patch $GOPATH/src/github.com/jaegertracing/jaeger/
